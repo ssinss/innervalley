@@ -4,7 +4,7 @@
 
 ## Host
 
-mine.spacebearbug.com:25565
+mine.spacebearbug.com
 
 ## 서버 설정
 
