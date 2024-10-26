@@ -9,7 +9,7 @@ services:
       EULA: "TRUE"
       TYPE: "VANILLA"
       MEMORY: "2G"
-      VERSION: "LATEST"
+      VERSION: "1.21.3"
       TZ: "KST"
       DIFFICULTY: "hard"
       ENABLE_AUTOPAUSE: "TRUE"
@@ -18,4 +18,4 @@ services:
       AUTOPAUSE_TIMEOUT_EST: "10"
     restart: unless-stopped
     volumes:
-      - /docker/minecraft:/data
+      - /volume1/docker/innervalley-data:/data
