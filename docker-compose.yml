@@ -8,6 +8,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "VANILLA"
+      MEMORY: "2G"
       VERSION: "LATEST"
       TZ: "KST"
       DIFFICULTY: "hard"
