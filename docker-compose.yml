@@ -1,5 +1,7 @@
+name: innervalley
 services:
   mc:
+    container_name: innervalley
     image: itzg/minecraft-server
     tty: true
     stdin_open: true
@@ -8,7 +10,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "VANILLA"
-      MEMORY: "2G"
+      MEMORY: "3G"
       VERSION: "1.21.3"
       TZ: "KST"
       DIFFICULTY: "hard"
@@ -19,3 +21,20 @@ services:
     restart: unless-stopped
     volumes:
       - /volume1/docker/innervalley-data:/data
+  restarter:
+    image: docker:cli
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    entrypoint:
+      - /bin/sh
+      - -c
+    command:
+      - |
+        while true; do
+          if [ "$$(date +%H%M)" = "2000" ]; then
+            docker restart innervalley
+          fi
+          sleep 60
+        done
+  
