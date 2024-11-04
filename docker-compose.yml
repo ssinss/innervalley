@@ -32,7 +32,7 @@ services:
     command:
       - |
         while true; do
-          if [ "$$(date +%H%M)" = "2000" ]; then
+          if [ "$$(date +%H%M)" = "0230" ]; then
             docker restart innervalley
           fi
           sleep 60
